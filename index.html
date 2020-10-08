@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Java Script Form Validation</title>
+</head>
+
+<body>
+    <div class="container"><br>
+        <h1 class="text-success text-center">Complete Java Script Form Validation</h1><br><br>
+        <div class="col-lg-8 m-auto d-block">
+            <form action="#" onsubmit="return validation()" class="bg-light">
+                <div class="form-group">
+                    <label for="user">User Name</label>
+                    <input id="user" class="form-control" type="text" name="user" autocomplete="off">
+                    <span id="username" class="text-danger font-weight-bold"></span>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password: </label>
+                    <input id="password" class="form-control" type="text" name="password" autocomplete="off">
+                    <span id="passwords" class="text-danger font-weight-bold"></span>
+                </div>
+                <div class="form-group">
+                    <label for="conpassword">Confrim Password: </label>
+                    <input id="conpassword" class="form-control" type="text" name="conpassword" autocomplete="off">
+                    <span id="conpasswords" class="text-danger font-weight-bold"></span>
+                </div>
+                <div class="form-group">
+                    <label for="mobilenumber">Mobile Number: </label>
+                    <input id="mobilenumber" class="form-control" type="text" name="mobilenumber" autocomplete="off">
+                    <span id="mobnumber" class="text-danger font-weight-bold"></span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email: </label>
+                    <input id="email" class="form-control" type="text" name="email" autocomplete="off">
+                    <span id="emails" class="text-danger font-weight-bold"></span>
+                </div>
+                <input type="submit" name="submit" value="submit" class="btn-success">
+            </form>
+
+        </div>
+    </div>
+
+
+    <script text="type/javascript">
+
+        function validation(){ var user = document.getElementById('user').value; var pass = document.getElementById('password').value; var cpass = document.getElementById('conpassword').value; var mnumber = document.getElementById('mobilenumber').value; var email
+        = document.getElementById('email').value; var user_correct_way = /^[A-Za-z]+$/; if(user == "") { document.getElementById('username').innerHTML = " ** Please fill your user name field"; return false; } if(user.length
+        <=2 || user.length>20) { document.getElementById('username').innerHTML = " ** User Name must be between 3 to 20 charecter."; return false; } if(user.match(user_correct_way)) true; else{ document.getElementById('username').innerHTML = " ** User Name must be charecter.";
+            return false; } if(pass == "") { document.getElementById('passwords').innerHTML = "** Please fill your password field"; return false; } if(pass.length
+            <=4 || pass.length>20){ document.getElementById('passwords').innerHTML = " ** Passwords must be between 5 to 20 charecter."; return false; } if(pass != cpass){ document.getElementById('conpasswords').innerHTML = " ** Passwords are not matching."; return false;
+                } if(cpass == "") { document.getElementById('conpasswords').innerHTML = "** Please fill your confrim password field"; return false; } if(mnumber == "") { document.getElementById('mobnumber').innerHTML = "** Please fill your mobile number
+                field"; return false; } if(isNaN(mnumber)) { document.getElementById('mobnumber').innerHTML = "** User must be write digits not a charecter."; return false; } if(mnumber.length != 10) { document.getElementById('mobnumber').innerHTML =
+                "** User must be write 10 digits."; return false; } if(email == "") { document.getElementById('emails').innerHTML = "** Please fill your email field"; return false; } if(email.indexOf('@')
+                <=0 ){ document.getElementById( 'emails').innerHTML="** @ position is not valid." ; return false; } if((email.charAt(email.length-4)!='.' ) && (email.charAt(email.length-3)!='.' )){ document.getElementById( 'emails').innerHTML="** '.' position is not valid."
+                    ; return false; } } </script>
+
+</body>
+
+</html>
